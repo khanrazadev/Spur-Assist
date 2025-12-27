@@ -10,7 +10,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://spur-assist.vercel.app"
+      "https://spur-assist-smoky.vercel.app/"
     ],
   })
 );
