@@ -13,7 +13,7 @@ export async function sendChatMessage(
     let res: Response;
 
     try {
-        res = await fetch(API_URL, {
+        res = await fetch(`${API_URL}/api/chat/message`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message, sessionId }),
