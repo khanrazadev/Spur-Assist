@@ -7,6 +7,7 @@ import type { ChatMessage, HistoryResponse } from "../types/chat";
 const SESSION_TIMEOUT = 30 * 60 * 1000; // 30
 const lastActivity = localStorage.getItem("spur_last_activity");
 
+
 if (
     lastActivity &&
     Date.now() - Number(lastActivity) > SESSION_TIMEOUT
@@ -40,7 +41,7 @@ export function useChat() {
 
 
         fetch(
-            `http://localhost:3000/api/chat/history?sessionId=${sessionId}`
+            `${import.meta.env.VITE_API_BASE_URL}/api/chat/history?sessionId=${sessionId}`
         )
             .then((res) => {
                 if (!res.ok) throw new Error("Failed to load history");
