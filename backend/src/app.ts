@@ -10,10 +10,12 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://spur-assist-smoky.vercel.app/"
+      "https://spur-assist.vercel.app",
     ],
+    credentials: true,
   })
 );
+
 app.use(express.json());
 
 app.use("/api/chat", chatRoutes);
