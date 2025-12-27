@@ -6,32 +6,23 @@ import { chatHistoryRoutes } from "./routes/chat.history.route.js";
 
 export const app = express();
 
-const allowedOrigins = [
-  "https://spur-assist-smoky.vercel.app",
-  "https://spur-assist-git-main-kraza8644-3032s-projects.vercel.app",
-  "https://spur-assist-fn03vy4q9-kraza8644-3032s-projects.vercel.app"
-];
-
 app.use(
   cors({
     origin: function (origin, callback) {
-      // allow server-to-server or Postman requests
+      // allow Postman / server-to-server
       if (!origin) return callback(null, true);
 
-      if (allowedOrigins.includes(origin)) {
+      if (origin.endsWith(".vercel.app")) {
         callback(null, true);
       } else {
-        callback(new Error("Not allowed by CORS"));
+        callback(null, false);
       }
     },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
   })
 );
-
-app.options("*", cors());
-
 
 app.use(express.json());
 
