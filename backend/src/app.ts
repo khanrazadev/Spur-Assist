@@ -7,13 +7,9 @@ import { chatHistoryRoutes } from "./routes/chat.history.route.js";
 export const app = express();
 
 app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://spur-assist.vercel.app",
-    ],
-    credentials: true,
-  })
+    cors({
+        origin: true
+    })
 );
 
 app.use(express.json());
