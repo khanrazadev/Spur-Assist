@@ -8,21 +8,12 @@ export const app = express();
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // allow Postman / server-to-server
-      if (!origin) return callback(null, true);
-
-      if (origin.endsWith(".vercel.app")) {
-        callback(null, true);
-      } else {
-        callback(null, false);
-      }
-    },
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: [
+      "http://localhost:5173",
+      "https://spur-assist-smoky.vercel.app/"
+    ],
   })
 );
-
 app.use(express.json());
 
 app.use("/api/chat", chatRoutes);
