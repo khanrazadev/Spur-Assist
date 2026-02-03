@@ -9,8 +9,6 @@ Something you could put in front of users and not worry about it falling apart.
 ---
 
 
----
-
 ## How it works (end-to-end)
 
 1. User opens a page with the chat widget
@@ -182,4 +180,5 @@ Errors are normalized and user-safe.
 * Optional authentication layer
 
 I intentionally prioritized **reliability, clarity, and correctness** over visual fluff.
+
 
