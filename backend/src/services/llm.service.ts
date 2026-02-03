@@ -3,7 +3,7 @@ import { env } from "../config/env.js";
 import { createAppError } from "../errors/app-error.js";
 import { SPUR_PROMPT } from "../data/spur.faq.js";
 
-const MODEL = "xiaomi/mimo-v2-flash:free";
+const MODEL = "tngtech/deepseek-r1t2-chimera:free";
 const MAX_TOKENS = 200;
 
 export type LlmMessage = {
